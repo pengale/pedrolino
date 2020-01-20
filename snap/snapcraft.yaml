@@ -1,0 +1,23 @@
+name: pedrolino
+version: 0.0.1
+base: core18
+summary: Bug reproducer
+description: |
+  Minimal reproducer of bug encountered while working on MicroStack snap.
+grade: stable
+confinement: classic
+environment:
+  LD_LIBRARY_PATH: $SNAP/lib:$SNAP/lib/$SNAPCRAFT_ARCH_TRIPLET:$SNAP/usr/lib:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio
+  PATH: $SNAP/usr/sbin:$SNAP/usr/bin:$SNAP/sbin:$SNAP/bin:$PATH
+  LC_ALL: C
+
+apps:
+  test:
+    command: pedrolino
+    daemon: oneshot
+
+parts:
+  pedrolino:
+    plugin: python
+    python-version: python3
+    source: .
