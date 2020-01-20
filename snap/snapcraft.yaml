@@ -20,4 +20,4 @@ parts:
   pedrolino:
     plugin: python
     python-version: python3
-    source: .
+    source: src/
