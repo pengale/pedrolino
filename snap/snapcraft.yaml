@@ -7,10 +7,15 @@ description: |
   MicroStack snap.
 grade: stable
 confinement: classic  # This mirrors MicroStack, which must be classicly confined for now.
+environment:
+  PATH: $SNAP/usr/sbin:$SNAP/usr/bin:$SNAP/sbin:$SNAP/bin:$PATH
 
 apps:
   test:
-    command: pedrolino
+    command: bin/pedrolino
+
+  python:
+    command: usr/bin/python3
 
 parts:
   pedrolino:
